@@ -4,15 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  
   &__wrapper {
     margin-top: 102px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 184px;
+    
     &-title {
       width: 457px;
       height: 275px;
+      flex-shrink: 0;
 
       h1 {
         font-weight: 700;
@@ -22,6 +26,7 @@
         color: white;
         margin-bottom: 10px;
       }
+      
       p {
         font-weight: 500;
         font-size: 16px;
@@ -36,9 +41,178 @@
       align-items: center;
       justify-content: space-evenly;
       gap: 16px;
-      padding: 7px, 9px, 7px, 19px;
+      padding: 7px 9px 7px 19px;
       background: white;
       border-radius: 15px;
+      min-width: 300px;
+      height: 59px;
+      
+      .search-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 21px;
+        height: 21px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .search-input {
+        flex: 1;
+        height: 100%;
+        font-size: 16px;
+        color: #374151;
+        background: transparent;
+
+        &::placeholder {
+          color: #9ca3af;
+          font-size: 16px;
+        }
+      }
+
+      .search-button {
+        width: 112px;
+        height: 45px;
+        background-color: #3b82f6;
+        color: #ffffff;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        flex-shrink: 0;
+
+        &:hover {
+          background-color: #2563eb;
+        }
+
+        &:active {
+          background-color: #1d4ed8;
+          transform: translateY(1px);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+      }
+    }
+
+    img {
+      width: 461px;
+      height: 563px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+  
+  // Large Desktop (1200px+)
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1400px;
+    }
+  }
+  
+  // Desktop to Large Tablet (769px - 1199px)
+  @media (max-width: 1199px) and (min-width: 769px) {
+    height: 750px;
+    
+    &__wrapper {
+      margin-top: 80px;
+      gap: 120px;
+      
+      &-title {
+        width: 400px;
+        height: auto;
+        
+        h1 {
+          font-size: 56px;
+        }
+        
+        p {
+          font-size: 15px;
+          margin-bottom: 35px;
+        }
+      }
+      
+      &-search {
+        min-width: 280px;
+        height: 55px;
+        gap: 12px;
+        padding: 6px 8px 6px 16px;
+        
+        .search-input {
+          font-size: 15px;
+          
+          &::placeholder {
+            font-size: 15px;
+          }
+        }
+        
+        .search-button {
+          width: 100px;
+          height: 42px;
+          font-size: 15px;
+        }
+      }
+      
+      img {
+        width: 400px;
+        height: 490px;
+      }
+    }
+  }
+  
+  // Tablet (481px - 768px)
+.hero {
+  height: 877px;
+  background: url("../assets/hero.png") no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  &__wrapper {
+    margin-top: 102px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 184px;
+    width: 100%;
+    
+    &-title {
+      width: 457px;
+      height: 275px;
+      flex-shrink: 0;
+
+      h1 {
+        font-weight: 700;
+        font-style: bold;
+        font-size: 64px;
+        line-height: 125%;
+        color: white;
+        margin-bottom: 10px;
+      }
+      
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        color: #8b8e99;
+        margin-bottom: 47px;
+      }
+    }
+
+    &-search {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 16px;
+      padding: 7px 9px 7px 19px;
+      background: white;
+      border-radius: 15px;
+      min-width: 300px;
+      height: 59px;
+      
       .search-icon {
         display: flex;
         align-items: center;
@@ -75,6 +249,7 @@
         font-weight: 500;
         cursor: pointer;
         transition: background-color 0.2s ease;
+        flex-shrink: 0;
 
         &:hover {
           background-color: #2563eb;
@@ -92,9 +267,241 @@
       }
     }
 
-    img {
+    &-image {
       width: 461px;
       height: 563px;
+      flex-shrink: 0;
+      order: 3; // Default order for desktop
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
+  
+  // Large Desktop (1200px+)
+  @media (min-width: 1200px) {
+    &__wrapper {
+      max-width: 1400px;
+    }
+  }
+  
+  // Desktop to Large Tablet (769px - 1199px)
+  @media (max-width: 1199px) and (min-width: 769px) {
+    height: 750px;
+    
+    &__wrapper {
+      margin-top: 80px;
+      gap: 120px;
+      
+      &-title {
+        width: 400px;
+        height: auto;
+        
+        h1 {
+          font-size: 56px;
+        }
+        
+        p {
+          font-size: 15px;
+          margin-bottom: 35px;
+        }
+      }
+      
+      &-search {
+        min-width: 280px;
+        height: 55px;
+        gap: 12px;
+        padding: 6px 8px 6px 16px;
+        
+        .search-input {
+          font-size: 15px;
+          
+          &::placeholder {
+            font-size: 15px;
+          }
+        }
+        
+        .search-button {
+          width: 100px;
+          height: 42px;
+          font-size: 15px;
+        }
+      }
+      
+      &-image {
+        width: 400px;
+        height: 490px;
+      }
+    }
+  }
+  
+  // Tablet and Mobile - Image goes to bottom
+  @media (max-width: 768px) {
+    height: 650px;
+    background-position: center center;
+    
+    &__wrapper {
+      margin-top: 60px;
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+      
+      &-title {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        order: 1; // Title first
+        
+        h1 {
+          font-size: 48px;
+          margin-bottom: 15px;
+        }
+        
+        p {
+          font-size: 16px;
+          margin-bottom: 30px;
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      
+      &-search {
+        width: 100%;
+        max-width: 400px;
+        min-width: unset;
+        height: 52px;
+        gap: 10px;
+        padding: 6px 8px 6px 16px;
+        margin: 0 auto;
+        order: 2; // Search second
+        
+        .search-input {
+          font-size: 16px;
+          
+          &::placeholder {
+            font-size: 16px;
+          }
+        }
+        
+        .search-button {
+          width: 90px;
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+      
+      &-image {
+        width: 350px;
+        height: 428px;
+        max-width: 90%;
+        margin: 0 auto;
+        order: 3; // Image last
+        
+        img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 350/428;
+        }
+      }
+    }
+  }
+  
+  // Mobile (320px - 480px)
+  @media (max-width: 480px) {
+    height: 580px;
+    
+    &__wrapper {
+      margin-top: 40px;
+      gap: 30px;
+      
+      &-title {
+        h1 {
+          font-size: 36px;
+          line-height: 120%;
+          margin-bottom: 12px;
+        }
+        
+        p {
+          font-size: 14px;
+          line-height: 140%;
+          margin-bottom: 25px;
+        }
+      }
+      
+      &-search {
+        max-width: 100%;
+        height: 48px;
+        gap: 8px;
+        padding: 5px 6px 5px 12px;
+        
+        .search-icon {
+          width: 18px;
+          height: 18px;
+          margin-right: 8px;
+        }
+        
+        .search-input {
+          font-size: 14px;
+          
+          &::placeholder {
+            font-size: 14px;
+          }
+        }
+        
+        .search-button {
+          width: 80px;
+          height: 36px;
+          font-size: 13px;
+          border-radius: 6px;
+        }
+      }
+      
+      &-image {
+        width: 280px;
+        height: 342px;
+        max-width: 85%;
+      }
+    }
+  }
+  
+  // Extra Small Mobile (320px and below)
+  @media (max-width: 320px) {
+    height: 520px;
+    
+    &__wrapper {
+      margin-top: 30px;
+      gap: 25px;
+      
+      &-title {
+        h1 {
+          font-size: 32px;
+        }
+        
+        p {
+          font-size: 13px;
+        }
+      }
+      
+      &-search {
+        height: 44px;
+        padding: 4px 5px 4px 10px;
+        
+        .search-button {
+          width: 70px;
+          height: 34px;
+          font-size: 12px;
+        }
+      }
+      
+      &-image {
+        width: 250px;
+        height: 305px;
+      }
+    }
+  }
+}
 }

@@ -1,9 +1,12 @@
 .review {
   width: 100%;
   margin-top: 135px;
+  padding: 0 20px;
 
   &__wrapper {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,6 +18,7 @@
       line-height: 100%;
       color: #3858d6;
       margin-bottom: 5px;
+      text-align: center;
     }
 
     h3 {
@@ -22,6 +26,7 @@
       font-size: 36px;
       line-height: 100%;
       margin-bottom: 65px;
+      text-align: center;
     }
   }
 
@@ -29,6 +34,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 47px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 
     .review__card {
       border: 1px solid #ddd;
@@ -37,39 +45,325 @@
       display: flex;
       align-items: center;
       padding: 20px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-color: #bbb;
+      }
     }
 
     .card__content {
       display: flex;
       align-items: center;
       gap: 20px;
+      width: 100%;
 
       img {
         width: 162px;
         height: 179px;
         object-fit: cover;
+        border-radius: 10px;
+        flex-shrink: 0;
       }
 
       &-body {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        flex: 1;
 
         h3 {
-          margin-top: 58px;
+          margin-top: 0;
           font-weight: 600;
           font-size: 20px;
+          line-height: 120%;
+          color: #1f2937;
+          margin-bottom: 8px;
         }
 
         p {
           font-size: 14px;
           line-height: 1.4;
           color: #555;
+          margin: 0;
         }
 
         .stars {
           color: #f5c518;
           font-size: 16px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 0 40px;
+    
+    &__wrapper {
+      max-width: 1400px;
+    }
+    
+    &__cards {
+      max-width: 1400px;
+      gap: 60px;
+      
+      .review__card {
+        padding: 25px;
+      }
+      
+      .card__content {
+        gap: 25px;
+        
+        img {
+          width: 180px;
+          height: 200px;
+        }
+        
+        &-body {
+          gap: 12px;
+          
+          h3 {
+            font-size: 22px;
+          }
+          
+          p {
+            font-size: 15px;
+          }
+          
+          .stars {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1199px) and (min-width: 769px) {
+    margin-top: 100px;
+    padding: 0 30px;
+    
+    &__wrapper {
+      h3 {
+        font-size: 32px;
+        margin-bottom: 50px;
+      }
+    }
+    
+    &__cards {
+      gap: 35px;
+      
+      .review__card {
+        padding: 18px;
+      }
+      
+      .card__content {
+        gap: 18px;
+        
+        img {
+          width: 140px;
+          height: 155px;
+        }
+        
+        &-body {
+          gap: 8px;
+          
+          h3 {
+            font-size: 18px;
+          }
+          
+          p {
+            font-size: 13px;
+          }
+          
+          .stars {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    margin-top: 80px;
+    padding: 0 20px;
+    
+    &__wrapper {
+      p {
+        font-size: 14px;
+      }
+      
+      h3 {
+        font-size: 28px;
+        margin-bottom: 40px;
+      }
+    }
+    
+    &__cards {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      
+      .review__card {
+        padding: 16px;
+      }
+      
+      .card__content {
+        gap: 16px;
+        
+        img {
+          width: 120px;
+          height: 135px;
+        }
+        
+        &-body {
+          gap: 6px;
+          
+          h3 {
+            font-size: 17px;
+          }
+          
+          p {
+            font-size: 12px;
+            line-height: 1.5;
+          }
+          
+          .stars {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    margin-top: 60px;
+    padding: 0 15px;
+    
+    &__wrapper {
+      p {
+        font-size: 13px;
+      }
+      
+      h3 {
+        font-size: 24px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+      }
+    }
+    
+    &__cards {
+      gap: 20px;
+      
+      .review__card {
+        padding: 14px;
+        border-radius: 12px;
+      }
+      
+      .card__content {
+        gap: 12px;
+        
+        img {
+          width: 100px;
+          height: 110px;
+        }
+        
+        &-body {
+          gap: 5px;
+          
+          h3 {
+            font-size: 16px;
+            line-height: 125%;
+          }
+          
+          p {
+            font-size: 11px;
+            line-height: 1.6;
+          }
+          
+          .stars {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 320px) {
+    margin-top: 50px;
+    padding: 0 10px;
+    
+    &__wrapper {
+      h3 {
+        font-size: 22px;
+        margin-bottom: 25px;
+      }
+    }
+    
+    &__cards {
+      gap: 15px;
+      
+      .review__card {
+        padding: 12px;
+        border-radius: 10px;
+      }
+      
+      .card__content {
+        gap: 10px;
+        
+        img {
+          width: 85px;
+          height: 95px;
+        }
+        
+        &-body {
+          gap: 4px;
+          
+          h3 {
+            font-size: 15px;
+          }
+          
+          p {
+            font-size: 10px;
+            line-height: 1.7;
+          }
+          
+          .stars {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 400px) {
+    &__cards {
+      .card__content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        
+        img {
+          width: 120px;
+          height: 130px;
+          margin-bottom: 5px;
+        }
+        
+        &-body {
+          align-items: center;
+          text-align: center;
+          
+          h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+          }
+          
+          p {
+            font-size: 12px;
+            text-align: center;
+            max-width: 250px;
+          }
         }
       }
     }

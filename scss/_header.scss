@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   position: absolute;
+  z-index: 1000;
 }
 
 .navbar {
@@ -9,23 +10,285 @@
   align-items: center;
   justify-content: space-between;
   color: white;
-  cursor: pointer;
+  position: relative;
+
   &__logo {
     width: 78px;
     height: 27px;
+    flex-shrink: 0;
+    z-index: 1001;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
+
   &__collection {
     display: flex;
     gap: 27px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
     a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+
       &:hover {
         color: #3858d6;
-        transition: color 0.3s ease;
       }
     }
   }
+
   &__icons {
     display: flex;
     gap: 15.38px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+    width: 30px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+
+    .fa-bars {
+      font-size: 24px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .fa-times {
+      font-size: 24px;
+      color: white;
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      .fa-bars {
+        display: none;
+      }
+
+      .fa-times {
+        display: block;
+      }
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.active {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .navbar__collection {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .navbar__item {
+        a {
+          font-size: 18px;
+          font-weight: 500;
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #3858d6;
+          }
+        }
+      }
+    }
+
+    .navbar__icons {
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      .navbar__icon {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: opacity 0.3s ease;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    height: 75px;
+
+    &__logo {
+      width: 85px;
+      height: 30px;
+    }
+
+    &__collection {
+      gap: 35px;
+    }
+
+    &__item a {
+      font-size: 17px;
+    }
+
+    &__icons {
+      gap: 18px;
+    }
+
+    &__icon {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 768px) {
+    height: 65px;
+
+    &__logo {
+      width: 70px;
+      height: 24px;
+    }
+
+    &__collection {
+      gap: 20px;
+    }
+
+    &__item a {
+      font-size: 14px;
+    }
+
+    &__icons {
+      gap: 12px;
+    }
+
+    &__icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: 60px;
+
+    &__logo {
+      width: 60px;
+      height: 21px;
+    }
+
+    &__collection {
+      display: none;
+    }
+
+    &__hamburger {
+      display: flex;
+    }
+
+    &__mobile-menu {
+      display: flex;
+    }
+
+    &__icons {
+      gap: 12px;
+
+      .navbar__icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 55px;
+
+    &__logo {
+      width: 55px;
+      height: 19px;
+    }
+
+    &__icons {
+      gap: 10px;
+
+      .navbar__icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    overflow: auto;
   }
 }

@@ -9,14 +9,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/main.min.css" />
+    <script></script>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <nav class="navbar">
           <div class="navbar__logo">
-            <img src="./assets/Logo.svg" alt="" />
+            <img src="./assets/Logo.svg" alt="Logo" />
           </div>
+
           <ul class="navbar__collection">
             <li class="navbar__item">
               <a href="#">Home</a>
@@ -34,16 +36,54 @@
               <a href="#">About</a>
             </li>
           </ul>
+
+          <div class="navbar__hamburger">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+          </div>
+
           <div class="navbar__icons">
-            <li class="navbar__icon">
-              <img src="./assets/Search.svg" alt="" />
-            </li>
-            <li class="navbar__icon">
-              <img src="./assets/Person.svg" alt="" />
-            </li>
-            <li class="navbar__icon">
-              <img src="./assets/Shopping Cart.svg" alt="" />
-            </li>
+            <div class="navbar__icon">
+              <img src="./assets/Search.svg" alt="Search" />
+            </div>
+            <div class="navbar__icon">
+              <img src="./assets/Person.svg" alt="Profile" />
+            </div>
+            <div class="navbar__icon">
+              <img src="./assets/Shopping Cart.svg" alt="Cart" />
+            </div>
+          </div>
+
+          <div class="navbar__mobile-menu">
+            <ul class="navbar__collection">
+              <li class="navbar__item">
+                <a href="#">Home</a>
+              </li>
+              <li class="navbar__item">
+                <a href="#">Brands</a>
+              </li>
+              <li class="navbar__item">
+                <a href="#">Recent Products</a>
+              </li>
+              <li class="navbar__item">
+                <a href="#">Contact</a>
+              </li>
+              <li class="navbar__item">
+                <a href="#">About</a>
+              </li>
+            </ul>
+
+            <div class="navbar__icons">
+              <div class="navbar__icon">
+                <img src="./assets/Search.svg" alt="Search" />
+              </div>
+              <div class="navbar__icon">
+                <img src="./assets/Person.svg" alt="Profile" />
+              </div>
+              <div class="navbar__icon">
+                <img src="./assets/Shopping Cart.svg" alt="Cart" />
+              </div>
+            </div>
           </div>
         </nav>
       </div>
@@ -363,5 +403,6 @@
     <footer class="footer">
       <p>Copyright @ 2022 | Mohid</p>
     </footer>
+    <script src="./js/hamburger.js"></script>
   </body>
 </html>

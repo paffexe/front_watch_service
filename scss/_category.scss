@@ -1,8 +1,12 @@
 .category {
   width: 100%;
   margin-top: 73px;
+  padding: 0 20px;
+
   &__wrapper {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-evenly;
@@ -17,20 +21,215 @@
       border-radius: 22px;
       background: #f6f6f6;
       padding: 35px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      justify-self: center;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        background: #f0f0f0;
+      }
+
+      &-image {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+      }
     }
 
     &-text {
+      flex: 1;
+
       h3 {
         font-size: 36px;
         font-weight: 700;
         line-height: 100%;
         margin-bottom: 6px;
+        color: #1f2937;
       }
+
       p {
         font-weight: 500;
         font-size: 16px;
         line-height: 100%;
         color: #8b8e99;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 40px;
+
+    &__wrapper {
+      max-width: 1400px;
+      gap: 30px;
+
+      &-card {
+        width: 380px;
+        height: 250px;
+        padding: 40px;
+        gap: 25px;
+      }
+
+      &-text {
+        h3 {
+          font-size: 38px;
+        }
+
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1199px) and (min-width: 769px) {
+    margin-top: 60px;
+    padding: 0 30px;
+
+    &__wrapper {
+      gap: 18px;
+
+      &-card {
+        width: 320px;
+        height: 220px;
+        padding: 30px;
+        gap: 18px;
+        border-radius: 18px;
+      }
+
+      &-text {
+        h3 {
+          font-size: 32px;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+    padding: 0 20px;
+
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+
+      &-card {
+        width: 100%;
+        max-width: 320px;
+        height: 200px;
+        padding: 25px;
+        gap: 15px;
+        border-radius: 16px;
+      }
+
+      &-text {
+        h3 {
+          font-size: 28px;
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 120%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 40px;
+    padding: 0 15px;
+
+    &__wrapper {
+      grid-template-columns: 1fr;
+      gap: 12px;
+
+      &-card {
+        width: 100%;
+        max-width: 350px;
+        height: 180px;
+        padding: 20px;
+        gap: 12px;
+        border-radius: 14px;
+        flex-direction: row;
+      }
+
+      &-text {
+        h3 {
+          font-size: 24px;
+          margin-bottom: 3px;
+          line-height: 110%;
+        }
+
+        p {
+          font-size: 13px;
+          line-height: 130%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    margin-top: 35px;
+    padding: 0 10px;
+
+    &__wrapper {
+      gap: 10px;
+
+      &-card {
+        max-width: 300px;
+        height: 160px;
+        padding: 18px;
+        gap: 10px;
+        border-radius: 12px;
+      }
+
+      &-text {
+        h3 {
+          font-size: 22px;
+          margin-bottom: 2px;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 140%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__wrapper {
+      &-card {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        min-height: 180px;
+        padding: 20px 15px;
+
+        &-image {
+          margin-bottom: 10px;
+        }
+      }
+
+      &-text {
+        h3 {
+          margin-bottom: 5px;
+        }
       }
     }
   }
