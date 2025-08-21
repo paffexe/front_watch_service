@@ -1,0 +1,100 @@
+.hero {
+  height: 877px;
+  background: url("../assets/hero.png") no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__wrapper {
+    margin-top: 102px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 184px;
+    &-title {
+      width: 457px;
+      height: 275px;
+
+      h1 {
+        font-weight: 700;
+        font-style: bold;
+        font-size: 64px;
+        line-height: 125%;
+        color: white;
+        margin-bottom: 10px;
+      }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        color: #8b8e99;
+        margin-bottom: 47px;
+      }
+    }
+
+    &-search {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 16px;
+      padding: 7px, 9px, 7px, 19px;
+      background: white;
+      border-radius: 15px;
+      .search-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 21px;
+        height: 21px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .search-input {
+        flex: 1;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #374151;
+        background: transparent;
+
+        &::placeholder {
+          color: #9ca3af;
+          font-size: 16px;
+        }
+      }
+
+      .search-button {
+        width: 112px;
+        height: 45px;
+        background-color: #3b82f6;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #2563eb;
+        }
+
+        &:active {
+          background-color: #1d4ed8;
+          transform: translateY(1px);
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+      }
+    }
+
+    img {
+      width: 461px;
+      height: 563px;
+    }
+  }
+}
